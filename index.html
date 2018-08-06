@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>Hello AngularJS
+	</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+	<script src="hello.js"></script>
+</head>
+
+<body ng-app="myApp">
+	<div ng-controller="ctrl">
+		<ul ng-repeat="m in marcas">
+			<li ng-click="productosMarca(m.nombre)">{{ m.nombre }}</li>
+		</ul>
+		<ul ng-if="!productosPorMarca" ng-repeat="p in productos">
+			<li>{{ p.descripcion }}</li>
+		</ul>
+		<ul ng-if="productosPorMarca" ng-repeat="p in productosPorMarca">
+			<li>{{ p.descripcion }}</li>
+		</ul>
+	</div>
+</body>
+
+</html>
